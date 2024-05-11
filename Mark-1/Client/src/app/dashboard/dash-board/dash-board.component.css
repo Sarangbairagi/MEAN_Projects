@@ -1,0 +1,13 @@
+.Container-Card{
+  padding-top: 90px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-bottom: 30px;
+}
+
+h5{
+    font-size:large;
+    font-weight: bold;
+    color: rgb(251, 107, 107);
+}
+

@@ -1,0 +1,24 @@
+<div class="container pt-5 pb-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Marvellous Restaurent Login Portal</h1>
+                    <h5>You can login here!</h5>
+                </div>
+                <form > 
+                    <div class="mb-3">
+                      <label class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="loginUserData.email" [ngModelOptions]="{standalone: true}" placeholder="Email address">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Password</label>
+                      <input type="password" class="form-control" [(ngModel)]="loginUserData.password" [ngModelOptions]="{standalone: true}" id="exampleInputPassword1">
+                    </div>
+                    <button type="button" (click)="loginUser()"  class="btn btn-primary">Login</button>
+                  </form>
+                  <a style="color: blue; margin-top: 10px;" routerLink="/signup">New User? Click to Sign up</a>
+            </div>
+        </div>
+    </div>
+</div>

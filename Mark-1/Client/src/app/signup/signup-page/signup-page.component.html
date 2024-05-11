@@ -1,0 +1,74 @@
+
+<div class="container pb-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Marvellous Restaurent Portal Sign Up</h1>
+                    <h5>You can Sign Up here!</h5>
+                </div>
+                <form  [formGroup]="signupForm" (ngSubmit)="SignUpData()">
+
+                    <div class="mb-3" class="form-group">
+                      <label class="form-label" style="margin-top: 10px">Email address</label>
+                      <input formControlName="email" [class.is-invalid] = "signupForm.get('email')?.invalid && signupForm.get('email')?.touched" 
+                       type="email" class="form-control" id="exampleInputEmail1"  placeholder="Email address">
+                       <!-- <small [class.d-none]="signupForm.get('email')?.valid || signupForm.get('email')?.untouched" class="text-danger">Email is required</small>                        -->
+                        
+                       <!-- Multiple Validations -->
+                       <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+                           <small *ngIf="signupForm.get('email')?.errors?.['required']" class="text-danger">Email is required</small>
+                           <small *ngIf="signupForm.get('email')?.errors?.['pattern']" class="text-danger">Email is invalid</small>
+                       </div>
+
+                    </div>
+                    
+                    <div class="mb-3" class="form-group">
+                        <label class="form-label" style="margin-top: 15px">Name</label>
+                        <input formControlName="name" [class.is-invalid] = "signupForm.get('name')?.invalid && signupForm.get('name')?.touched"
+                        type="text" class="form-control" id="exampleInputEmail1"  placeholder="Name">
+                        <!-- <small [class.d-none]="signupForm.get('name')?.valid || signupForm.get('name')?.untouched" class="text-danger">Name is required</small> -->
+
+                         <!-- Multiple Validations -->
+                        <div *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched">
+                          <small *ngIf="signupForm.get('name')?.errors?.['required']" class="text-danger">Name is required</small>
+                          <small *ngIf="signupForm.get('name')?.errors?.['pattern']" class="text-danger">Only letters are allowed</small>
+                      </div>
+
+                      </div>
+
+                      <div class="mb-3" class="form-group">
+                        <label class="form-label" style="margin-top: 15px">Phone Number</label>
+                        <input formControlName="phonenumber" [class.is-invalid] = "signupForm.get('phonenumber')?.invalid && signupForm.get('phonenumber')?.touched"
+                        type="text" class="form-control" id="exampleInputEmail1"  placeholder="Phone">
+                        <!-- <small [class.d-none]="signupForm.get('phonenumber')?.valid || signupForm.get('phonenumber')?.untouched" class="text-danger">Phonenumber is required</small> -->
+
+                        <!-- Multiple Validations -->
+                        <div *ngIf="signupForm.get('phonenumber')?.invalid && signupForm.get('phonenumber')?.touched">
+                          <small *ngIf="signupForm.get('phonenumber')?.errors?.['required']" class="text-danger">Phonenumber is required</small>
+                          <small *ngIf="signupForm.get('phonenumber')?.errors?.['pattern']" class="text-danger">Please, Enter 10 digit Mobile Number</small>
+                        </div>
+
+                      </div>
+
+                    <div class="mb-3" class="form-group">
+                      <label class="form-label" style="margin-top: 15px">Password</label>
+                      <input formControlName="password" [class.is-invalid] = "signupForm.get('password')?.invalid && signupForm.get('password')?.touched" type="password" class="form-control" id="exampleInputPassword1">
+                      <small [class.d-none]="signupForm.get('password')?.valid || signupForm.get('password')?.untouched" class="text-danger">Password is required</small>
+                    </div>
+
+                    <div class="mb-3" class="form-group">
+                      <label class="form-label" style="margin-top: 15px">Confirm password</label>
+                      <input formControlName="Confirmpassword" [class.is-invalid] = "signupForm.get('Confirmpassword')?.invalid && signupForm.get('Confirmpassword')?.touched" type="password" class="form-control" id="exampleInputPassword1">
+                      <small [class.d-none]="signupForm.get('Confirmpassword')?.valid || signupForm.get('Confirmpassword')?.untouched" class="text-danger">Confirm Password is required</small>
+                    </div>
+
+                    <button style="margin-top: 15px" type="Submit" class="btn btn-primary" [disabled]="signupForm.invalid">sign up</button>
+
+                  </form>
+
+                  <a style="color: blue; margin-top: 10px;" routerLink="/login">Already User? Click to Login</a>
+               </div>
+        </div>
+    </div>
+</div>

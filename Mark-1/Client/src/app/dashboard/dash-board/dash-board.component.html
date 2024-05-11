@@ -1,0 +1,18 @@
+<div class="container " class="Container-Card">
+  <div class="row mt-5">
+    <div class="col-md-4 mb-5" *ngFor="let event of specialEvents">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">{{event.name}}</h5>
+          <p class="card-text">{{event.description}}</p>
+          <a href="#" class="btn btn-success">Take Admission</a>
+        </div>
+        <div class="card-footer text-muted  " style="background-color: #2290fe;">
+          <h5 style="color: white; font-weight: lighter; font-weight: 500;" >
+            {{event.Teacher}}
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
