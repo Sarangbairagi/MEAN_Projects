@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder,FormGroup,Validators} from '@angular/forms';
+import { AbstractControl, FormBuilder,FormGroup,Validators} from '@angular/forms';
 import { OnInit } from '@angular/core';
 import { ApiService } from '../../sharedata/api.service';
 import { Router } from '@angular/router';
@@ -34,8 +34,9 @@ export class SignupPageComponent implements OnInit
         password : ['',Validators.required],
         Confirmpassword : ['',Validators.required],
       }
-     )
+    )
   }
+
 
    
   SignUpData() 
